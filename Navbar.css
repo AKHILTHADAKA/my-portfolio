@@ -1,0 +1,109 @@
+/* General styling */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Best font family */
+  margin: 0;
+  padding: 0;
+
+  /* background-color: #ffffff;  */
+}
+/* Container styling */
+.container {
+  z-index: 1000;
+  height: auto;
+  width: 100%;
+  position: fixed;
+  /* background-image: url("../assets/banner.jpg"); */
+  background-color: white;
+  box-shadow: 0px -5px 50px rgb(40, 51, 202);
+}
+
+/* Main container styling */
+.main-container {
+  display: flex;
+  justify-content: space-between; /* Space between logo and navlist */
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0px 4px 40px rgba(255, 255, 255, 0.5);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Logo styling */
+.logo {
+  margin-left: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background-image: url("../assets/ad12.jpg");
+  background-size: cover; /* Ensure the image covers the entire element */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Navigation list styling */
+.navlist {
+  display: flex;
+  list-style: none;
+  margin-right: 120px;
+  padding: 0;
+  justify-content: flex-end; /* Align navlist items to the right */
+}
+
+/* Navigation item styling */
+.navlist .nav {
+  position: relative;
+  margin-left: 20px; /* Spacing between navigation items */
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000; /* Black text color */
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: inherit; /* Inherits the font family from the body */
+}
+
+/* Add animated underline on hover */
+.navlist .nav::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  background-color: #000;
+  /*Blackunderline*/
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+}
+
+.navlist .nav:hover::after {
+  transform: scaleX(1); /* Expands underline to full width on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navlist {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .navlist .nav {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
